@@ -28,9 +28,14 @@ def github_pull_request_status(parser, xml_parent, data):
     if ghprb is None:
         raise ValueError('github-pull-request trigger must be set before '
                          'github-pull-request-status')
+    extensions = ghprb.find('extensions')
+    if extensions is None:
+        extensions = XML.SubElement(ghprb, 'extensions')
+    status = XML.SubElement(extensions, 'org.jenkinsci.plugins.ghprb.'
+                                        'extensions.status.GhprbSimpleStatus')
     for prop_name, node_name in (('commit-status-context', 'commitStatusContext'),
                                  ('status-url', 'statusUrl'),
                                  ('triggered-status', 'triggeredStatus'),
                                  ('started-status', 'startedStatus')):
         if prop_name in data:
-            XML.SubElement(ghprb, node_name).text = data[prop_name]
+            XML.SubElement(status, node_name).text = data[prop_name]
