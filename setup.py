@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='jenkins-jobs-github-pr-status',
-    version='0.0.1',
+    version='1.0.0',
     description='Jenkins Job Builder Github PR Status',
     url='https://github.com/Alphadelta14/jenkins-jobs-github-pr-status',
     author='Alphadelta14',
