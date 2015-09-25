@@ -11,7 +11,7 @@ setup(
     install_requires=[],
     entry_points={
         'jenkins_jobs.triggers': [
-            'github-pull-request-status = jenkins_jobs_github_pr_status.github_pr_status:github_pull_request']},
+            'github-pull-request-status = jenkins_jobs_github_pr_status.github_pr_status:github_pull_request_status']},
     packages=['jenkins_jobs_github_pr_status'],
     classifiers=[
         'Environment :: Console',
